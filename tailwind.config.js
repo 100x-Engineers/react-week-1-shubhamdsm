@@ -26,6 +26,10 @@ export default {
         "neutral-950": "#0A0A0A",
         "neutral-1000": "#000000",
       },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
+      
     },
   },
   plugins: [],
