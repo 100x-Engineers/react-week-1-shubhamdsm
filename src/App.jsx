@@ -1,10 +1,12 @@
 import Button from "./components/button/Button";
 import Tab from "./components/tab/Tab";
 import Input from "./components/input/Input";
+import SearchInput from "./components/search/SearchInput";
 import { useState } from "react";
 function App() {
   const [activeTab, setActiveTab] = useState(0);
   const [inputValue, setInputValue] = useState("");
+  const [searchValue, setSearchValue] = useState("");
 
   const tabs = [
     {
@@ -17,9 +19,13 @@ function App() {
     },
   ];
   const handleInput = (e) => {
-    console.log(e.target.value)
+    console.log(e.target.value);
     setInputValue(e.target.value);
-  }
+  };
+  const handleSearch = (e) => {
+    console.log(e.target.value);
+    setSearchValue(e.target.value);
+  };
 
   return (
     <main className="bg-neutral-1000">
@@ -91,6 +97,13 @@ function App() {
         value={inputValue}
         placeholder="Label"
         handler={handleInput}
+      />
+      {/* Search Input Component */}
+      <SearchInput
+        type="text"
+        placeholder="Search"
+        value={searchValue}
+        handler={handleSearch}
       />
     </main>
   );
