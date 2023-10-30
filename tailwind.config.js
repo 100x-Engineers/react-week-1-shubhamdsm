@@ -12,6 +12,7 @@ export default {
         "card-fill": "#16181C",
         "search-bar-fill": "#212327",
         "button-stroke": "#546A7A",
+        
         "blue-wash": "#75BEEF",
         "neutral-50": "#F9F9F9",
         "neutral-100": "#F4F4F4",
