@@ -1,8 +1,11 @@
 import Button from "./components/button/Button";
 import Tab from "./components/tab/Tab";
+import Input from "./components/input/Input";
 import { useState } from "react";
 function App() {
   const [activeTab, setActiveTab] = useState(0);
+  const [inputValue, setInputValue] = useState("");
+
   const tabs = [
     {
       name: "For You",
@@ -13,9 +16,14 @@ function App() {
       content: <div>Following</div>,
     },
   ];
+  const handleInput = (e) => {
+    console.log(e.target.value)
+    setInputValue(e.target.value);
+  }
+
   return (
     <main className="bg-neutral-1000">
-      <section >
+      <section>
         {/* Secondary Buttons */}
         <h1>this is simple state</h1>
         <Button
@@ -77,6 +85,13 @@ function App() {
       </section>
       {/* Tab Component */}
       <Tab tabs={tabs} activeTab={activeTab} />
+      {/* Input Component */}
+      <Input
+        type="text"
+        value={inputValue}
+        placeholder="Label"
+        handler={handleInput}
+      />
     </main>
   );
 }
